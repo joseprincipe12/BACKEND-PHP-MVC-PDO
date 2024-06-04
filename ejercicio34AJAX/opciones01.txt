@@ -1,0 +1,4 @@
+<option>Soltero</option>
+<option>Casado</option>
+<option>Viudo</option>
+<option>Divorciado</option>
