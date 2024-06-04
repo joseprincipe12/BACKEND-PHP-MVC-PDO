@@ -1,0 +1,28 @@
+create database AUTO;
+
+use AUTO;
+
+create table Auto
+(
+placa varchar(6) primary key not null,
+marca varchar(100),
+propietario varchar(100),
+anno varchar(6)
+);
+
+delete from producto;
+select * from Auto marca;
+
+
+insert into Auto (placa, marca, propietario, anno) values ('PQ3525','Toyota','Juan Saavedra','2015');
+insert into Auto (placa, marca, propietario, anno) values ('XT3055','Toyota','Carlos Ramirez','2015');
+insert into Auto (placa, marca, propietario, anno) values ('XF3055','Nissan','Carlos Ramirez','2015');
+
+select * from Auto;
+
+select * from Auto where marca like "Toyota";
+
+SELECT DISTINCT marca
+FROM Auto;
+
+select distinct marca from Auto;
