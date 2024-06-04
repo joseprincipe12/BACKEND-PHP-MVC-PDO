@@ -1,0 +1,30 @@
+create database APPUSUARIO ;
+
+use APPUSUARIO;
+
+create table usuarios
+(
+usuario varchar(40)primary key not null,
+clave VARBINARY(200),
+nombre varchar(100),
+apellido varchar(100),
+correo varchar(30)
+);
+
+
+insert into usuarios(usuario, clave, nombre, apellido, correo)
+	values("jose", "pasword1234", "Jose", "Principe", "1245487@gmail.com");
+    
+insert into usuarios(usuario, clave, nombre, apellido, correo)
+	values("luis13", aes_encrypt("pasword1234","key1234"), "Jose", "Principe", "1245487@gmail.com");
+    
+insert into usuarios(usuario, clave, nombre, apellido, correo)
+	values("luis12", aes_encrypt("pasword1234","key1234"), "Jose", "Principe", "1245487@gmail.com");
+    
+    
+SELECT usuario, cast(AES_DECRYPT(clave, 'key1234') AS char(100)) as clave, nombre, apellido, correo
+FROM usuarios;
+
+SELECT usuario, cast(AES_DECRYPT(clave, 'key1234') AS char(100)) as clave FROM usuarios where usuario = "luis12";
+
+select * from usuarios;
